@@ -11,7 +11,7 @@
   "keywords": [
     "MEN"
   ],
-  "author": "",
+  "author": "Aidos Kashenov",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
