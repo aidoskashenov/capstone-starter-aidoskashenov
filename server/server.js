@@ -5,10 +5,10 @@ import users from './routes/users';
 const express = require('express');
 
 const app = express();
-const port = 3000;
+const port = 5000;
 
 app.get('/', (_, res) => {
-  res.send('<h1>Hello from Express</h1>');
+  res.send('<h1>Hello From Express</h1>');
 });
 
 app.use(

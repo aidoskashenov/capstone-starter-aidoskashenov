@@ -1,10 +1,10 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.scss";
+import {LoginRegistration} from "./components"
 
 function App() {
   return (
-  <h1>Hello World</h1>
+ <LoginRegistration/>
   );
 }
 
