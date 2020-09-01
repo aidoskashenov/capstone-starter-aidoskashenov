@@ -18,6 +18,12 @@ app.use(
 );
 app.use(express.json());
 
+app.use('/users', users);
+
+app.use((_, res) => {
+  res.status(404).send("Sorry can't find that!");
+});
+
 app.listen(port, () => {
   console.log(`Wistening at: http://localhost:${port}`);
 });
