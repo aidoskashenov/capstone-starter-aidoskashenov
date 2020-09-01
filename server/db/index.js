@@ -1,6 +1,6 @@
 import client from './client';
 
-export const addUser = async (newUser) => {
+const addUser = async (newUser) => {
   try {
     const insertRes = await client
       .db('capstone-logbook')
@@ -11,3 +11,5 @@ export const addUser = async (newUser) => {
     throw new Error(err);
   }
 };
+
+export default addUser;

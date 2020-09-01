@@ -9,15 +9,16 @@ export default {
         },
         // Turn 'newTravel' JS Object into actual JSON
         body: JSON.stringify(newUser),
-      })
+      });
 
       if (res.status > 400 && res.status < 500) {
-        throw `Bad route to server! 😞 ${res.status} ${res.body}`
+        throw `Bad route to server! 😞 ${res.status} ${res.body}`;
       } else if (!res.ok) {
-        throw `Unable to write data to server! ${res.status}`
+        throw `Unable to write data to server! ${res.status}`;
       }
-      return await res.json()
+      return await res.json();
     } catch (e) {
-      throw new Error(e)
+      throw new Error(e);
     }
+  },
 };

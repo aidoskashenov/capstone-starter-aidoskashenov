@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { Formik, Field, Form, ErrorMessage } from "formik";
 
+
 import * as Yup from "yup";
 
 export const Login = () => {
@@ -28,17 +29,6 @@ export const Login = () => {
       >
         <Form className="box">
         <h2 className="title">Login</h2>
-          <div className="field">
-            <label htmlFor="name" className="ml-2">
-              Name
-            </label>
-            <div className="control mx-2 my-1">
-              <Field name="name" type="text" />
-              <p className="help is-danger">
-                <ErrorMessage name="name" />
-              </p>
-            </div>
-          </div>
 
           <div className="field">
             <label htmlFor="email" className="ml-2">
