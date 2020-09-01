@@ -1,12 +1,13 @@
-const express = require('express');
+import client from './client';
 
-const app = express();
-const port = 3000;
-
-app.get('/', (_, res) => {
-  res.send('<h1>Hello from Express</h1>');
-});
-
-app.listen(port, () => {
-  console.log(`Wistening at: http://localhost:${port}`);
-});
+export const addUser = async (newUser) => {
+  try {
+    const insertRes = await client
+      .db('capstone-logbook')
+      .collection('users')
+      .insertOne(newUser);
+    return insertRes;
+  } catch (err) {
+    throw new Error(err);
+  }
+};
