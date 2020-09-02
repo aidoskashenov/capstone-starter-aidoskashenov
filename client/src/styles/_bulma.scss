@@ -12,6 +12,8 @@ $pink: #fa7c91;
 $brown: #757763;
 $beige-light: #d0d1cd;
 $beige-lighter: #eff0eb;
+$darkgrey:#717982;
+$darkblue:#146ac8;
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", -apple-system, blinkmacsystemfont, "Segoe UI",
@@ -20,8 +22,8 @@ $family-sans-serif: "Nunito", -apple-system, blinkmacsystemfont, "Segoe UI",
 $family-secondary: "Halant", serif;
 $grey-dark: $brown;
 $grey-light: $beige-light;
-$primary: $purple;
-$link: $pink;
+$primary: $darkgrey;
+$link: $darkblue;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 
