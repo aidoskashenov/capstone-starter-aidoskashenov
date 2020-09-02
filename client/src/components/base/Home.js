@@ -43,9 +43,7 @@ export const Home = () => {
             <nav className="level">
               <div className="level-item has-text-centered">
                 <div>
-                  <a href="#" onSu>
-                    Forgot Password?
-                  </a>
+                  <a href="#">Forgot Password?</a>
                 </div>
               </div>
               <div className="level-item has-text-centered">

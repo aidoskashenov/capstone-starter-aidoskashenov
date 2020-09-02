@@ -6,21 +6,21 @@ import { Home } from "./components/base";
 import { Footer } from "./components/views/Footer";
 
 function App() {
-  return <Router>
-  <Route exact path="/">
-    <Home />
-  </Route>
+  return (
+    <Router>
+      <Route exact path="/">
+        <Home />
+      </Route>
 
-  <Switch>
-<Route exact path="/register">
-   <Registration/>
+      <Switch>
+        <Route exact path="/register">
+          <Registration />
+        </Route>
+      </Switch>
 
-</Route>
-
-  </Switch>
-
-  <Footer />
-</Router>
+      <Footer />
+    </Router>
+  );
 }
 
 export default App;

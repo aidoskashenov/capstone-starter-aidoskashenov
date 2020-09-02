@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import addUser from '../db';
+import { addUser, loginUser } from '../db';
 
 const router = new Router();
 
@@ -12,11 +12,22 @@ router.post('/add', async ({ body }, res) => {
   try {
     const dbRes = await addUser(body);
     res.status(201);
-    res.json(dbRes);
+    res.send(dbRes);
   } catch (error) {
     error.message = 'Database error!';
     res.status(500).send(error);
   }
 });
 
+// router.post('/login', async ({ body }, res) => {
+//   try {
+//     const mongoRes = await loginUser(body);
+//     console.log(mongoRes, 'mongoRes');
+//     res.status(200);
+//     res.send(mongoRes);
+//   } catch (err) {
+//     res.status(500);
+//     res.json(err);
+//   }
+// });
 export default router;

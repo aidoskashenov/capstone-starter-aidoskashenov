@@ -6,10 +6,10 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import {
   faGithub,
   faLinkedin,
-  faTwitter,
+  faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
 
-library.add(fab, faGithub, faLinkedin, faTwitter);
+library.add(fab, faGithub, faLinkedin, faFacebook);
 
 export const Footer = () => (
   <footer className="footer">
@@ -45,14 +45,14 @@ export const Footer = () => (
           >
             <FontAwesomeIcon icon={["fab", "linkedin"]} />
           </a>
-          {/* <a
+          <a
             className="level-item mx-2"
-            href="https://twitter.com/GoCodeFinity"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={["fab", "twitter"]} /> */}
-          {/* </a> */}
+            <FontAwesomeIcon icon={["fab", "facebook"]} />
+          </a>
         </div>
       </div>
     </footer>
