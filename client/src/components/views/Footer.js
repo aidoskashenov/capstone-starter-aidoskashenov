@@ -19,18 +19,18 @@ export const Footer = () => (
     <footer className="footer">
       <div className="content has-text-centered">
         <p>
-          <strong>Todo List by&nbsp;</strong>
+          <strong>ATC LogBook by&nbsp;</strong>
           <a
             href="https://codefinity.tech"
             target="_blank"
             rel="noopener noreferrer"
           >
-            CodeFinity
+            Aidos Kashenov
           </a>
         </p>
         <div className="level">
           <a
-            href="https://github.com/manavm1990"
+            href="https://github.com/aidoskashenov"
             target="_blank"
             rel="noopener noreferrer"
             className="level-item mx-2"
@@ -38,21 +38,21 @@ export const Footer = () => (
             <FontAwesomeIcon icon={["fab", "github"]} />
           </a>
           <a
-            href="https://www.linkedin.com/in/manavm1990/"
+            href="https://www.linkedin.com/in/aidos-kashenov/"
             target="_blank"
             rel="noopener noreferrer"
             className="level-item mx-2"
           >
             <FontAwesomeIcon icon={["fab", "linkedin"]} />
           </a>
-          <a
+          {/* <a
             className="level-item mx-2"
             href="https://twitter.com/GoCodeFinity"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={["fab", "twitter"]} />
-          </a>
+            <FontAwesomeIcon icon={["fab", "twitter"]} /> */}
+          {/* </a> */}
         </div>
       </div>
     </footer>

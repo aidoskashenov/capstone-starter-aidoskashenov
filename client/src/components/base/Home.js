@@ -6,7 +6,7 @@ export const Home = () => {
     <section className="hero is-fullheight">
       <div className="hero-body has-text-centered">
         <div className="login">
-          <img src="https://logoipsum.com/logo/logo-1.svg" width="325px" />
+          <img src="https://logoipsum.com/logo/logo-10.svg" width="325px" />
           <form>
             <div className="field">
               <div className="control">
@@ -27,7 +27,7 @@ export const Home = () => {
           <nav className="level">
             <div className="level-item has-text-centered">
               <div>
-                <a href="#">Forgot Password?</a>
+                <a href="#" onSu>Forgot Password?</a>
               </div>
             </div>
             <div className="level-item has-text-centered">
