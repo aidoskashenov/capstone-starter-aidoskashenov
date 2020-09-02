@@ -1,13 +1,14 @@
 import React from "react";
 import "./App.scss";
-import { LoginRegistration } from "./components";
+import { Registration } from "./components/Registration";
 import { Home } from "./components/base";
+import { Footer } from "./components/views/Footer";
 
 function App() {
   return (
     <>
-      {/* <LoginRegistration /> */}
       <Home />
+      <Footer />
     </>
   );
 }
