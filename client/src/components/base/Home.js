@@ -1,21 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import api from "api";
 
 export const Home = () => {
+  const [user, setUser] = useState([]);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const email = event.target.elements[0].value
+    const password = event.target.elements[1].value
+    const res = {}
+    res.email = email;
+    res.password = password
+    const user = await api.loginUser(res)
+    setUser(user)
+
+  };
+
   return (
-    <body>
+
       <section className="hero is-fullheight">
         <div className="hero-body has-text-centered">
           <div className="login">
             <img src="https://logoipsum.com/logo/logo-10.svg" width="325px" />
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="field">
                 <div className="control">
                   <input
                     className="input is-medium "
                     type="email"
                     placeholder="hello@example.com"
-                    autocomplete="username"
+                    autoComplete="username"
                     required
                   />
                 </div>
@@ -26,7 +41,7 @@ export const Home = () => {
                     className="input is-medium "
                     type="password"
                     placeholder="**********"
-                    autocomplete="current-password"
+                    autoComplete="current-password"
                     required
                   />
                 </div>
@@ -55,6 +70,6 @@ export const Home = () => {
           </div>
         </div>
       </section>
-    </body>
+
   );
 };

@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import api from "api";
 
-
 import { Formik, Field, Form, ErrorMessage } from "formik";
 
 import * as Yup from "yup";
 
 export const Registration = ({ register }) => {
   return (
-    <section className="hero-is-fullheight">
+    <section className="hero is-fullheight">
       <div className="hero-body has-text-centered">
         <Formik
           initialValues={{
@@ -38,7 +37,7 @@ export const Registration = ({ register }) => {
           <Form className="box">
             <h2 className="title">Registration</h2>
             <div className="field">
-              <label htmlFor="firstName" className="ml-2">
+              <label htmlFor="firstName" className="is-ml-2">
                 First Name
               </label>
               <div className="control mx-2 my-1">
@@ -65,7 +64,9 @@ export const Registration = ({ register }) => {
               </label>
               <div className="control mx-2 my-1">
                 <Field name="email" type="email" />
-                <ErrorMessage name="email" />
+                <p className="help is-danger">
+                  <ErrorMessage name="email" />
+                </p>
               </div>
             </div>
 
@@ -75,7 +76,9 @@ export const Registration = ({ register }) => {
               </label>
               <div className="control mx-2 my-1">
                 <Field name="pass" type="password" />
-                <ErrorMessage name="pass" />
+                <p className="help is-danger">
+                  <ErrorMessage name="pass" />
+                </p>
               </div>
             </div>
 

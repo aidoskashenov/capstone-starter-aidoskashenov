@@ -19,15 +19,15 @@ router.post('/add', async ({ body }, res) => {
   }
 });
 
-// router.post('/login', async ({ body }, res) => {
-//   try {
-//     const mongoRes = await loginUser(body);
-//     console.log(mongoRes, 'mongoRes');
-//     res.status(200);
-//     res.send(mongoRes);
-//   } catch (err) {
-//     res.status(500);
-//     res.json(err);
-//   }
-// });
+router.post('/login', async ({ body }, res) => {
+  try {
+    const mongoRes = await loginUser(body);
+    console.log(mongoRes, 'mongoRes');
+    res.status(200);
+    res.send(mongoRes);
+  } catch (err) {
+    res.status(500);
+    res.json(err);
+  }
+});
 export default router;

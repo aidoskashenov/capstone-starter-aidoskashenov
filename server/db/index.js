@@ -15,3 +15,12 @@ export const addUser = async (newUser) => {
     throw new Error(err);
   }
 };
+
+export const loginUser = async (creds) => {
+  console.log(creds, 'creds');
+  try {
+    return await client.db('capstone-logbook').collection('users').findOne(creds);
+  } catch (err) {
+    throw new Error(err);
+  }
+};
