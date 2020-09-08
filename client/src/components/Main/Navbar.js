@@ -20,15 +20,18 @@ export const Navbar = () => {
             <Link className="navbar-item" to="/">
               Home
             </Link>
+            <Link className="navbar-item" to="/register">
+              Create Account
+            </Link>
             <a className="navbar-item" href="admin.html">
               Add Report
             </a>
             <a className="navbar-item" href="admin.html">
               Add Incident
             </a>
-            <a className="navbar-item" href="admin.html">
+            <Link className="navbar-item" to="/main">
               Reports
-            </a>
+            </Link>
             <Link className="navbar-item" to="/contact">
               Contact Us
             </Link>

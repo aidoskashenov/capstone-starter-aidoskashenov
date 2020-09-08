@@ -76,7 +76,7 @@ export const Main = () => {
               <div className="column is-6">
                 <div className="card">
                   <header className="card-header">
-                    <p className="card-header-title">Inventory Search</p>
+                    <p className="card-header-title">Search Report</p>
                     <a
                       href="#"
                       className="card-header-icon"
@@ -107,7 +107,7 @@ export const Main = () => {
                 </div>
                 <div className="card">
                   <header className="card-header">
-                    <p className="card-header-title">User Search</p>
+                    <p className="card-header-title">Search Incident</p>
                     <a
                       href="#"
                       className="card-header-icon"
