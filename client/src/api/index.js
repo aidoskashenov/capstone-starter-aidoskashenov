@@ -1,46 +1,29 @@
-export default {
-  async addUser(newUser) {
-    try {
-      const res = await fetch("http://localhost:5000/users/add", {
-        method: "POST",
-        headers: {
-          // Must specify that we are sending JSON! 🙄
-          "Content-Type": "application/json",
-        },
-        // Turn 'newTravel' JS Object into actual JSON
-        body: JSON.stringify(newUser),
-      });
+import dotenv from "dotenv"
+dotenv.config()
 
-      if (res.status > 400 && res.status < 500) {
-        throw `Bad route to server! 😞 ${res.status} ${res.body}`;
-      } else if (!res.ok) {
-        throw `Unable to write data to server! ${res.status}`;
-      }
-      return await res.json();
-    } catch (e) {
-      throw new Error(e);
-    }
-  },
-  async loginUser(newUser) {
-    try {
-      const res = await fetch("http://localhost:5000/users/login", {
-        method: "POST",
-        headers: {
-          // Must specify that we are sending JSON! 🙄
-          "Content-Type": "application/json",
-        },
-        // Turn 'newTravel' JS Object into actual JSON
-        body: JSON.stringify(newUser),
-      });
+const baseUrl = process.env.REACT_APP_BASE_URL
 
-      if (res.status > 400 && res.status < 500) {
-        throw `Bad route to server! 😞 ${res.status} ${res.body}`;
-      } else if (!res.ok) {
-        throw `Unable to write data to server! ${res.status}`;
-      }
-      return await res.json();
-    } catch (e) {
-      throw new Error(e);
-    }
+// Factory Function
+export default (route) => ({
+  async create(payload) {
+    const res = await fetch(`${baseUrl}${route}/create` , {
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload)
+    })
+
+    return res.json()
   },
-};
+
+  show(id) {},
+
+  getAll() {
+    console.log('tring to get all', route)
+  },
+
+  update(payload, id) {},
+
+  delete(id) {},
+})

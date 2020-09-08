@@ -4,6 +4,10 @@ import api from "api";
 
 import { Formik, Field, Form, ErrorMessage } from "formik";
 
+import { useHistory, useLocation } from "react-router-dom";
+
+import auth from "auth";
+
 import * as Yup from "yup";
 
 export const Registration = ({ register }) => {
@@ -28,7 +32,7 @@ export const Registration = ({ register }) => {
           onSubmit={async (values, { setSubmitting }) => {
             console.log("submission", values);
             try {
-              const jsonRes = await api.addUser(values);
+              const jsonRes = await api(values);
             } catch (error) {
               console.error(error);
             }

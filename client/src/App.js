@@ -4,6 +4,7 @@ import "./App.scss";
 import { Registration } from "./components/Registration";
 import { Home } from "./components/base";
 import { Footer } from "./components/views/Footer";
+import {Main} from "./components/Main"
 
 function App() {
   return (
@@ -16,7 +17,11 @@ function App() {
         <Route exact path="/register">
           <Registration />
         </Route>
+        <Route exact path="/main">
+        <Main/>
+        </Route>
       </Switch>
+
 
       <Footer />
     </Router>
