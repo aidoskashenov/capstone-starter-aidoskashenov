@@ -2,4 +2,4 @@ const { LoginRegistration } = require("./LoginRegistration");
 
 export { Registration } from "./Registration";
 export { Footer } from "./Footer";
-export {Main} from "./Main"
+export { Main, Navbar } from "./Main";
