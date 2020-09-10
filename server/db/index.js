@@ -2,23 +2,15 @@ import client from './client';
 
 export const addUser = async (newUser) => {
   try {
-    const { email } = newUser;
-    const existingUser = await client
+    return await client
       .db('capstone-logbook')
       .collection('users')
-      .findOne({ email });
-    if (!existingUser) {
-      return await client
-        .db('capstone-logbook')
-        .collection('users')
-        .insertOne(newUser);
-    }
-    throw new Error('User Already exists');
+      .insertOne(newUser);
   } catch (err) {
+    // Throw back any other errors
     throw new Error(err);
   }
 };
-
 export const getUser = async (uid) => {
   try {
     return await client.db('capstone-logbook').collection('users').findOne(uid);
@@ -26,6 +18,7 @@ export const getUser = async (uid) => {
     throw new Error(err);
   }
 };
+
 export const loginUser = async (creds) => {
   console.log(creds, 'creds');
   try {

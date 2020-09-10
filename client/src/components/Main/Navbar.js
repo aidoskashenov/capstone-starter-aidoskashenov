@@ -6,9 +6,9 @@ export const Navbar = () => {
     <nav className="navbar is-primary">
       <div className="container">
         <div className="navbar-brand">
-          <a className="navbar-item brand-text" href="../index.html">
+          <Link className="navbar-item brand-text" to="/home">
             ATC LogBook
-          </a>
+          </Link>
           <div className="navbar-burger burger" data-target="navMenu">
             <span></span>
             <span></span>
