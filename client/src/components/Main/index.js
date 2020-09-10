@@ -10,7 +10,7 @@ export const Main = () => {
       <div className="container">
         <div className="columns">
           <div className="column is-12">
-            <section className="hero is-info is-fullwidth">
+            <section className="hero is-fullwidth">
               <div className="hero-body">
                 <div className="container">
                   <h1 className="title">Hello, Admin.</h1>

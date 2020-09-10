@@ -33,7 +33,7 @@ export const ContactPage = () => {
                 <a
                   href="https://instagram.com"
                   target="_blank"
-                  className="button is-light is-large"
+                  className="button is-large"
                 >
                    <FontAwesomeIcon icon={["fab", "github"]} />
                   <i className="fa fa-instagram" aria-hidden="true"></i>
@@ -41,7 +41,7 @@ export const ContactPage = () => {
                 <a
                   href="https://twitter.com"
                   target="_blank"
-                  className="button is-light is-large"
+                  className="button is-large"
                 >
                   {" "}
                   <FontAwesomeIcon icon={["fab", "facebook"]} />

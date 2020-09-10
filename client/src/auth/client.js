@@ -8,5 +8,5 @@ export default firebase.initializeApp({
   storageBucket: "capstone-logbook.appspot.com",
   messagingSenderId: "78168380168",
   appId: "1:78168380168:web:99db0f227b81fd5089d2bd",
-  measurementId: "G-XMW3N9NTMR",
+  measurementId: "G-XMW3N9NTMR"
 });

@@ -1,75 +1,47 @@
-import React, { useState } from "react";
+import React from "react";
+
 import { Link } from "react-router-dom";
-import api from "api";
 
 export const Home = () => {
-  const [user, setUser] = useState([]);
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const email = event.target.elements[0].value
-    const password = event.target.elements[1].value
-    const res = {}
-    res.email = email;
-    res.password = password
-    const user = await api.loginUser(res)
-    setUser(user)
-
-  };
+  // const handleAdd =  (event) => {
+  //   // console.log(event, "ddunmiy   ");
+  //   event.preventDefault();
+  //   setImage(secure_url)
+  // };
 
   return (
-
-      <section className="hero is-fullheight">
-        <div className="hero-body has-text-centered">
-          <div className="login">
-            <img src="https://logoipsum.com/logo/logo-10.svg" width="325px" />
-            <form onSubmit={handleSubmit}>
-              <div className="field">
-                <div className="control">
-                  <input
-                    className="input is-medium "
-                    type="email"
-                    placeholder="hello@example.com"
-                    autoComplete="username"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="field">
-                <div className="control">
-                  <input
-                    className="input is-medium "
-                    type="password"
-                    placeholder="**********"
-                    autoComplete="current-password"
-                    required
-                  />
-                </div>
-              </div>
-              <br />
-              <button
-                className="button is-block is-fullwidth is-primary is-medium "
-                type="submit"
-              >
+    <>
+      <div className="hero hero--home is-fullheight has-text-centered">
+        <div className="hero-body hero-body--home">
+          <div className="container">
+            <div className="flex flex--align-center flex--column">
+              <img
+                src="https://logoipsum.com/logo/logo-10.svg"
+                width="325px"
+                alt="Logo"
+                className="image"
+              />
+              <h1 className="title">Air Traffic Control Logbook</h1>
+              <Link className="button is-primary my-2" to="/register">
+                Get Started
+              </Link>
+              <Link className="button is-small my-2" to="/login">
                 Login
-              </button>
-            </form>
-            <br></br>
-            <nav className="level">
-              <div className="level-item has-text-centered">
-                <div>
-                  <a href="#">Forgot Password?</a>
-                </div>
-              </div>
-              <div className="level-item has-text-centered">
-                <div>
-                  <Link to="/register">Create an Account</Link>
-                </div>
-              </div>
-            </nav>
+              </Link>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
+
+      <section className="px-4 py-4">
+        <div className="container">
+          <h2 className="title"></h2>
+          <p>
+
+          </p>
+        </div>
+      </section>
+    </>
   );
 };

@@ -1,29 +1,49 @@
-import dotenv from "dotenv"
-dotenv.config()
+import dotenv from "dotenv";
 
-const baseUrl = process.env.REACT_APP_BASE_URL
+dotenv.config();
 
-// Factory Function
+const baseURL = process.env.REACT_APP_BASE_URL;
+
+console.log(baseURL);
+
+// Factory Function - 'encloses' 'route' inside of each method
 export default (route) => ({
   async create(payload) {
-    const res = await fetch(`${baseUrl}${route}/create` , {
-      method: 'POST',
+    const res = await fetch(`${baseURL}/${route}`, {
+      method: "POST",
       headers: {
-      'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(payload)
-    })
+      body: JSON.stringify(payload),
+    });
 
-    return res.json()
+    return res;
   },
 
-  show(id) {},
-
-  getAll() {
-    console.log('tring to get all', route)
+  async show(id) {
+    const res = await fetch(`${baseURL}/${route}/${id}`);
+    return res;
   },
 
-  update(payload, id) {},
+  async update(payload, id) {
+    const res = await fetch(`${baseURL}/${route}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ payload, id }),
+    });
+    return res;
+  },
 
-  delete(id) {},
-})
+  async delete(id) {
+    const res = await fetch(`${baseURL}/${route}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id }),
+    });
+    return res;
+  },
+});
