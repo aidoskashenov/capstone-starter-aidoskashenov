@@ -28,7 +28,7 @@ function App() {
           <LoginRegistration />
         </Route>
 
-        <Route exact path="/create-account">
+        <Route exact path="/register">
           <Redirect
             to={{ pathname: "/login", state: { status: "Create Account" } }}
           />

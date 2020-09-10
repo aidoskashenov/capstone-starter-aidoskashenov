@@ -1,13 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import PropTypes from "prop-types";
+import auth from "auth";
 
 export const Navbar = () => {
+  const history = useHistory();
+
+  const signOutHandler = () => {
+    auth.signOut().then(() => {
+      history.push("/register");
+    });
+  };
+
   return (
     <nav className="navbar is-primary">
       <div id="navbarMenu" className="navbar-menu">
         <div className="navbar-start">
           <div className="navbar-item">
-            <Link className="navbar-item has-background-$primary has-text-white" to="/">
+            <Link
+              className="navbar-item has-background-$primary has-text-white"
+              to="/"
+            >
               ATC LogBook
             </Link>
           </div>
@@ -31,7 +44,11 @@ export const Navbar = () => {
               <Link className="navbar-item" to="/contact">
                 Contact Us
               </Link>
-              <Link className="navbar-item navbar-end has-background-dark" to="/contact">
+              <Link
+                className="navbar-item navbar-end has-background-dark"
+                to="/Four04"
+                onClick={signOutHandler}
+              >
                 Sign Out
               </Link>
             </div>

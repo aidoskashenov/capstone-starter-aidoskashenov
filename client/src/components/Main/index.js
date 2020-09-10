@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ReportList } from "./ReportList";
-import { Navbar } from "./Navbar";
+import { Navbar } from "../base/Navbar";
 
 export const Main = () => {
   return (
@@ -145,4 +145,4 @@ export const Main = () => {
   );
 };
 
-export { Navbar } from "./Navbar";
+export { Navbar } from "../base/Navbar";

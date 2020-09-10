@@ -11,6 +11,7 @@ export const addUser = async (newUser) => {
     throw new Error(err);
   }
 };
+
 export const getUser = async (uid) => {
   try {
     return await client.db('capstone-logbook').collection('users').findOne(uid);
