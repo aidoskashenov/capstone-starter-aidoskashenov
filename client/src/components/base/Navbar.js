@@ -42,7 +42,7 @@ export const Navbar = () => {
                 Reports
               </Link>
               <Link className="navbar-item" to="/contact">
-                Contact Us
+                Contact Me
               </Link>
               <Link
                 className="navbar-item navbar-end has-background-dark"

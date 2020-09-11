@@ -43,10 +43,6 @@ function App() {
           <AddReport />
         </Route>
 
-        <Route exact path="/addreport">
-          <Redirect to={{ pathname: "/addreport" }} />
-        </Route>
-
         <Route exact path="/contact">
           <ContactPage />
         </Route>
