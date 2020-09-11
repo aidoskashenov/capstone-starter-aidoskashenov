@@ -15,10 +15,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      {/* <Route exact path="/" component={Home} />
-      <Route exact path="/register" component={LoginRegistration} />
-      <Route exact path="/main" component={Main} />
-      <Route exact path="/contact" component={ContactPage} /> */}
+
       <Switch>
         <Route exact path="/">
           <Home />
@@ -42,12 +39,16 @@ function App() {
           <Redirect to={{ pathname: "/register" }} />
         </Route>
 
-        <Route exact path="/contact">
-          <ContactPage />
+        <Route exact path="/addreport">
+          <AddReport />
         </Route>
 
         <Route exact path="/addreport">
-          <AddReport />
+          <Redirect to={{ pathname: "/addreport" }} />
+        </Route>
+
+        <Route exact path="/contact">
+          <ContactPage />
         </Route>
 
         <Route>

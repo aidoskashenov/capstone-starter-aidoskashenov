@@ -5,6 +5,8 @@ import { Navbar } from "../base/Navbar";
 import { AddReport } from "./AddReport";
 
 export const Main = () => {
+
+
   return (
     <>
       <div className="container">
@@ -13,7 +15,7 @@ export const Main = () => {
             <section className="hero is-fullwidth">
               <div className="hero-body">
                 <div className="container">
-                  <h1 className="title">Hello, Admin.</h1>
+                  <h1 className="title">Hello, Mr.qwerty,</h1>
                   <h2 className="subtitle">
                     I hope you are having a great day!
                   </h2>
@@ -24,26 +26,26 @@ export const Main = () => {
               <div className="tile is-ancestor has-text-centered">
                 <div className="tile is-parent">
                   <article className="tile is-child box">
-                    <p className="title">439k</p>
-                    <p className="subtitle">Users</p>
+                    <p className="title">UAAA</p>
+                    <p className="subtitle">ALA</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box">
-                    <p className="title">59k</p>
-                    <p className="subtitle">Products</p>
+                    <p className="title">RW05L</p>
+                    <p className="subtitle">Magnetic Degree 051</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box">
-                    <p className="title">3.4k</p>
-                    <p className="subtitle">Open Orders</p>
+                    <p className="title">A</p>
+                    <p className="subtitle">ATIS information</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box">
-                    <p className="title">19</p>
-                    <p className="subtitle">Exceptions</p>
+                    <p className="title">0</p>
+                    <p className="subtitle">Incidents</p>
                   </article>
                 </div>
               </div>
