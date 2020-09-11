@@ -32,9 +32,9 @@ export const Navbar = () => {
               <Link className="navbar-item" to="/register">
                 Create Account
               </Link>
-              <a className="navbar-item" href="admin.html">
+              <Link className="navbar-item" to="/addreport">
                 Add Report
-              </a>
+              </Link>
               <a className="navbar-item" href="admin.html">
                 Add Incident
               </a>

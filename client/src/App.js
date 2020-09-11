@@ -9,7 +9,7 @@ import "./App.scss";
 import { LoginRegistration } from "./components/LoginRegistration";
 import { Home, ContactPage, Four04 } from "./components/base";
 import { Footer } from "./components/views/Footer";
-import { Main, Navbar } from "./components/Main";
+import { Main, Navbar, AddReport } from "./components/Main";
 
 function App() {
   return (
@@ -44,6 +44,10 @@ function App() {
 
         <Route exact path="/contact">
           <ContactPage />
+        </Route>
+
+        <Route exact path="/addreport">
+          <AddReport />
         </Route>
 
         <Route>

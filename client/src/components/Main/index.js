@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ReportList } from "./ReportList";
 import { Navbar } from "../base/Navbar";
+import { AddReport } from "./AddReport";
 
 export const Main = () => {
   return (
     <>
-
       <div className="container">
         <div className="columns">
           <div className="column is-12">
@@ -146,3 +146,4 @@ export const Main = () => {
 };
 
 export { Navbar } from "../base/Navbar";
+export { AddReport } from "./AddReport";
