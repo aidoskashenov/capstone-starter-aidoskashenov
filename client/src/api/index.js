@@ -4,8 +4,6 @@ dotenv.config();
 
 const baseURL = process.env.REACT_APP_BASE_URL;
 
-console.log(baseURL);
-
 // Factory Function - 'encloses' 'route' inside of each method
 export default (route) => ({
   async create(payload) {
@@ -25,6 +23,10 @@ export default (route) => ({
     return res;
   },
 
+  async showDailylog() {
+    const res = await fetch(`${baseURL}/${route}`);
+    return res;
+  },
   async update(payload, id) {
     const res = await fetch(`${baseURL}/${route}`, {
       method: "PATCH",
@@ -47,5 +49,3 @@ export default (route) => ({
     return res;
   },
 });
-
-

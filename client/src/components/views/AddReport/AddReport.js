@@ -7,8 +7,6 @@ export const AddReport = () => {
   const [activeRunway, setActiveRunway] = useState("05");
   const dailylogAPI = api("dailylog");
 
-  console.log(activeRunway);
-
   // Dispatch 'init' to update all of the initial todos...if any
   return (
     <Formik
