@@ -5,6 +5,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 import users from './routes/users';
+import dailylog from './routes/dailylog';
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/users', users);
+app.use('/dailylog', dailylog);
 
 app.listen(process.env.PORT, () => {
   console.log('server is running');

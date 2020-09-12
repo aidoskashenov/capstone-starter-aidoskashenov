@@ -35,9 +35,7 @@ export const Navbar = () => {
               <Link className="navbar-item" to="/addreport">
                 Add Report
               </Link>
-              <a className="navbar-item" href="admin.html">
-                Add Incident
-              </a>
+
               <Link className="navbar-item" to="/main">
                 Reports
               </Link>

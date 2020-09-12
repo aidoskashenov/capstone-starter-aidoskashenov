@@ -1,2 +1,3 @@
-// 'views' 📁 is for 'static pages'
-// If you don't have any, you may delete the folder.abs
+export { Main } from "./Main";
+export { LoginRegistration } from "./LoginRegistration";
+export {AddReport} from "./AddReport"

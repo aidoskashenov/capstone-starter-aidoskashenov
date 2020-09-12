@@ -31,3 +31,10 @@ export const loginUser = async (creds) => {
     throw new Error(err);
   }
 };
+export const addDailylog = async (newDailylog) => {
+  try {
+    return await client.db('capstone-logbook').collection('dailylog').insertOne(newDailylog);
+  } catch (err) {
+    throw new Error(err);
+  }
+};

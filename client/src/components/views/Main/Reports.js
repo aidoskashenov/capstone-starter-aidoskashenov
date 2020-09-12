@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ReportList } from "./ReportList";
-import { Navbar } from "../base/Navbar";
-import { AddReport } from "./AddReport";
+import { Navbar } from "../../base/Navbar";
+import { AddReport } from "../AddReport/AddReport";
+import api from "api";
 
-export const Main = () => {
+const dailylogAPI = api("dailylog");
 
+console.log(dailylogAPI);
 
+export const Reports = () => {
   return (
     <>
       <div className="container">
@@ -30,6 +33,7 @@ export const Main = () => {
                     <p className="subtitle">ALA</p>
                   </article>
                 </div>
+
                 <div className="tile is-parent">
                   <article className="tile is-child box">
                     <p className="title">RW05L</p>
@@ -147,5 +151,5 @@ export const Main = () => {
   );
 };
 
-export { Navbar } from "../base/Navbar";
-export { AddReport } from "./AddReport";
+export { Navbar } from "../../base/Navbar";
+export { AddReport } from "../AddReport/AddReport";

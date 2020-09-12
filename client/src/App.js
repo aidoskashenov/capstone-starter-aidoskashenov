@@ -6,10 +6,10 @@ import {
   Redirect,
 } from "react-router-dom";
 import "./App.scss";
-import { LoginRegistration } from "./components/LoginRegistration";
-import { Home, ContactPage, Four04 } from "./components/base";
-import { Footer } from "./components/views/Footer";
-import { Main, Navbar, AddReport } from "./components/Main";
+
+import { Home, ContactPage, Four04, Navbar, Footer } from "./components/base";
+
+import { Main, LoginRegistration, AddReport } from "./components/views";
 
 function App() {
   return (

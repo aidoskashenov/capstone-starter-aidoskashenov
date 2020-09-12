@@ -1,8 +1,21 @@
 import React, { Fragment, useState } from "react";
 import { Formik, Form, ErrorMessage, Field } from "formik";
 import { Link } from "react-router-dom";
+import api from 'api'
+
+
+
+
 
 export const AddReport = () => {
+
+
+
+
+
+
+
+
   return (
     <Formik
       initialValues={{
@@ -47,7 +60,7 @@ export const AddReport = () => {
         };
         console.log("submission", dailyLog);
 
-        // dailyLogAPI.create()
+        // dailylogAPI.create()
         setSubmitting(false);
       }}
     >
