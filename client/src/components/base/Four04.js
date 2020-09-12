@@ -9,7 +9,7 @@ export const Four04 = () => (
     <Link to="/">
       Wanna go home&nbsp;
       <span role="img" aria-label="house">
-        🏠
+
       </span>
       ?
     </Link>

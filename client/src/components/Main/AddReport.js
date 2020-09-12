@@ -24,17 +24,30 @@ export const AddReport = () => {
         comments: "",
       }}
       onSubmit={(values, { setSubmitting }) => {
-        console.log("submission", values);
-        // const test = {
-        //   runway: {
-        //     runway,
-        //     runwaystate,
-        //     coverag
-        //   },
+        const dailyLog = {
 
-        // }
+          date: new Date().toISOString(),
+          rw: {
+            runway: values.runway,
+            runwaystate: values.runwaystate,
+            coverage: values.coverage,
+            breakingAction: values.breakingAction,
+          },
+          weatherATIS: values.weatherATIS,
+          significantWeather: values.significantWeather,
+          equipment: {
+            psr: values.psr,
+            ssr: values.ssr,
+            ils: values.ils,
+            dme: values.dme,
+          },
+          maintenance: values.maintenance,
+          militaryActivity: values.militaryActivity,
+          comments: values.comments,
+        };
+        console.log("submission", dailyLog);
 
-        // runwayAPI.create()
+        // dailyLogAPI.create()
         setSubmitting(false);
       }}
     >
@@ -125,9 +138,9 @@ export const AddReport = () => {
             <Field name="comments" className="textarea" type="textarea" />
           </div>
 
-          <Link className="button is-primary mt-3" type="submit" to="/Four04">
+          <button className="button is-primary mt-3" type="submit" to="/Four04">
             Submit
-          </Link>
+          </button>
         </div>
       </Form>
     </Formik>
