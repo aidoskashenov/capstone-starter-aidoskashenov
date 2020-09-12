@@ -1,22 +1,13 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { Formik, Form, ErrorMessage, Field } from "formik";
 import { Link } from "react-router-dom";
-import api from 'api'
-
-
-
-
+import api from "api";
 
 export const AddReport = () => {
+  const dailylogAPI = api("dailylog");
 
-
-
-
-
-
-
-
-  return (
+  // Dispatch 'init' to update all of the initial todos...if any
+return (
     <Formik
       initialValues={{
         runway: "",
@@ -36,9 +27,9 @@ export const AddReport = () => {
         militaryActivity: "",
         comments: "",
       }}
-      onSubmit={(values, { setSubmitting }) => {
-        const dailyLog = {
-
+      onSubmit={async (values, { setSubmitting }) => {
+        const dailylogAPI = api("dailylog");
+        const dailylog = {
           date: new Date().toISOString(),
           rw: {
             runway: values.runway,
@@ -58,7 +49,7 @@ export const AddReport = () => {
           militaryActivity: values.militaryActivity,
           comments: values.comments,
         };
-        console.log("submission", dailyLog);
+       const res = await dailylogAPI.create({dailylog})
 
         // dailylogAPI.create()
         setSubmitting(false);
