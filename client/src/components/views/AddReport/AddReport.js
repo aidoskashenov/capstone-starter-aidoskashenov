@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 import api from "api";
 
 export const AddReport = () => {
-  const [rw, setRw] = useState("05");
+  const [activeRunway, setActiveRunway] = useState("05");
   const dailylogAPI = api("dailylog");
 
-  console.log(rw);
+  console.log(activeRunway);
 
   // Dispatch 'init' to update all of the initial todos...if any
   return (
     <Formik
       initialValues={{
-        rw: rw,
+        activeRunway: activeRunway,
         runway: "",
         runwaystate: "",
         coverage: "",
@@ -35,7 +35,7 @@ export const AddReport = () => {
         const dailylogAPI = api("dailylog");
         const dailylog = {
           date: new Date().toISOString(),
-          rw: values.rw,
+          activeRunway: values.activeRunway,
           rw: {
             runway: values.runway,
             runwaystate: values.runwaystate,
@@ -65,16 +65,16 @@ export const AddReport = () => {
         <div className="container">
           <div className="columns">
             <div className="column is-12">
-              <label className="label mt-3 mb-3 mr-3">Runway</label>
+              <label className="label mt-3 mb-3 mr-3">Active Runway</label>
               <div className="field ">
                 <div className="control">
                   <label className="radio">
                     <Field
                       type="radio"
                       label="05"
-                      checked={rw === "05"}
+                      checked={activeRunway === "05"}
                       value="05"
-                      onClick={() => setRw("05")}
+                      onClick={() => setActiveRunway("05")}
                     />
                     05
                   </label>
@@ -82,9 +82,9 @@ export const AddReport = () => {
                     <Field
                       type="radio"
                       label="23"
-                      checked={rw === "23"}
+                      checked={activeRunway === "23"}
                       value="23"
-                      onClick={() => setRw("23")}
+                      onClick={() => setActiveRunway("23")}
                     />
                     23
                   </label>
@@ -139,7 +139,7 @@ export const AddReport = () => {
                     type="text"
                   />
                 </div>
-                <label className="label">Significant weather</label>
+                <label className="label mt-3">Significant weather</label>
                 <div className="control">
                   <Field name="significantWeather" type="checkbox" />
                 </div>
