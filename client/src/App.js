@@ -39,7 +39,7 @@ function App() {
           <Redirect to={{ pathname: "/register" }} />
         </Route>
 
-        <Route exact path="/addreport">
+        <Route exact path="/addreport/">
           <AddReport />
         </Route>
 

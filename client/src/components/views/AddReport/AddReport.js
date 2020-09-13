@@ -31,7 +31,8 @@ export const AddReport = () => {
       }}
       onSubmit={async (values, { setSubmitting }) => {
         const dailylogAPI = api("dailylog");
-        const dailylog = {
+
+        const res = await dailylogAPI.create({
           date: new Date().toISOString(),
           activeRunway: values.activeRunway,
           rw: {
@@ -51,8 +52,7 @@ export const AddReport = () => {
           maintenance: values.maintenance,
           militaryActivity: values.militaryActivity,
           comments: values.comments,
-        };
-        const res = await dailylogAPI.create({ dailylog });
+         });
 
         // dailylogAPI.create()
         setSubmitting(false);

@@ -1,15 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ReportList } from "./ReportList";
 import { Navbar } from "../../base/Navbar";
 import { AddReport } from "../AddReport/AddReport";
 import api from "api";
+import { date } from "yup";
 
 const dailylogAPI = api("dailylog");
 
-console.log(dailylogAPI);
-
 export const Reports = () => {
+  const [dailylog, setDailylog] = useState("");
+
+  useEffect(() => {
+    (async () => {
+      const response = await dailylogAPI
+        .showDailylog()
+        .then(function (response) {
+          // The response is a Response instance.
+          // You parse the data into a useable format using `.json()`
+          return response.json();
+        })
+        .then(function (data) {
+          setDailylog(data);
+          // `data` is the parsed version of the JSON returned from the above endpoint.
+          // { "userId": 1, "id": 1, "title": "...", "body": "..." }
+        });
+    })();
+  }, []);
+
+
+
+
   return (
     <>
       <div className="container">
@@ -70,7 +91,7 @@ export const Reports = () => {
                     </a>
                   </header>
                   <div>
-                    <ReportList />
+                    <ReportList dailylog={dailylog} />
                   </div>
                   <footer className="card-footer">
                     <a href="#" className="card-footer-item">
