@@ -1,9 +1,7 @@
-import React, { Fragment } from "react";
-import { AddReport } from "../AddReport/AddReport";
+import React from "react";
+
 import { Reports } from "./Reports";
 
 export const Main = () => {
   return <Reports />;
 };
-
-

@@ -9,7 +9,12 @@ import "./App.scss";
 
 import { Home, ContactPage, Four04, Navbar, Footer } from "./components/base";
 
-import { Main, LoginRegistration, AddReport } from "./components/views";
+import {
+  Main,
+  LoginRegistration,
+  AddReport,
+  SingleReport,
+} from "./components/views";
 
 function App() {
   return (
@@ -45,6 +50,10 @@ function App() {
 
         <Route exact path="/contact">
           <ContactPage />
+        </Route>
+
+        <Route exact path="/singlereport">
+          <SingleReport />
         </Route>
 
         <Route>

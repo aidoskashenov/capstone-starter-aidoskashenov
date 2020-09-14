@@ -5,7 +5,6 @@ import { Navbar } from "../../base/Navbar";
 import { AddReport } from "../AddReport/AddReport";
 import api from "api";
 
-
 const dailylogAPI = api("dailylog");
 
 export const Reports = () => {
@@ -27,8 +26,6 @@ export const Reports = () => {
         });
     })();
   }, []);
-
-
 
 
   return (
@@ -93,7 +90,7 @@ export const Reports = () => {
                   <div>
                     <ReportList dailylog={dailylog} />
                   </div>
-                  <footer className="card-footer">
+                  <footer className="card-footer ">
                     <a href="#" className="card-footer-item">
                       View All
                     </a>

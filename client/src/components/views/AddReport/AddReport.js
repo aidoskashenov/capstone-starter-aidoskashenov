@@ -52,9 +52,9 @@ export const AddReport = () => {
           maintenance: values.maintenance,
           militaryActivity: values.militaryActivity,
           comments: values.comments,
-         });
+        });
 
-        // dailylogAPI.create()
+
         setSubmitting(false);
       }}
     >
@@ -68,6 +68,7 @@ export const AddReport = () => {
                 <div className="control">
                   <label className="radio">
                     <Field
+                    className="mr-2"
                       type="radio"
                       label="05"
                       checked={activeRunway === "05"}
@@ -79,6 +80,7 @@ export const AddReport = () => {
                   <label className="radio">
                     <Field
                       type="radio"
+                      className="mr-1"
                       label="23"
                       checked={activeRunway === "23"}
                       value="23"
@@ -188,11 +190,7 @@ export const AddReport = () => {
                   </div>
                 </div>
 
-                <button
-                  className="button is-primary mt-3"
-                  type="submit"
-                  to="/Four04"
-                >
+                <button className="button is-primary mt-3" type="submit">
                   Submit
                 </button>
               </div>

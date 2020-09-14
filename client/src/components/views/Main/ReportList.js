@@ -1,6 +1,14 @@
 import React from "react";
 
+import { Link, useHistory, useLocation } from "react-router-dom";
+
 export const ReportList = ({ dailylog }) => {
+  const history = useHistory();
+
+  const handleClick = (dailylog) => {
+    history.push("/singlereport", {dailylog});
+  };
+
   return (
     <div className="card-table">
       <div className="content">
@@ -12,9 +20,13 @@ export const ReportList = ({ dailylog }) => {
                     <td width="5%">
                       <i className="fa fa-bell-o"></i>
                     </td>
-                    <td>{item.date ? item.date : null}</td>
+                    <td>{item.date}</td>
                     <td className="level-right">
-                      <a className="button is-small is-primary" href="#">
+                      <a
+                        to="/singlereport"
+                        onClick={() => handleClick(item)}
+                        className="button is-small is-primary"
+                      >
                         View
                       </a>
                     </td>
