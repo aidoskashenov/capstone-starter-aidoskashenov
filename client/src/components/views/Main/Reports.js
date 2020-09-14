@@ -4,7 +4,7 @@ import { ReportList } from "./ReportList";
 import { Navbar } from "../../base/Navbar";
 import { AddReport } from "../AddReport/AddReport";
 import api from "api";
-import { date } from "yup";
+
 
 const dailylogAPI = api("dailylog");
 
@@ -79,7 +79,7 @@ export const Reports = () => {
               <div className="column is-6">
                 <div className="card events-card">
                   <header className="card-header">
-                    <p className="card-header-title">Events</p>
+                    <p className="card-header-title">Report List</p>
                     <a
                       href="#"
                       className="card-header-icon"

@@ -1,34 +1,47 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 export const ReportList = ({ dailylog }) => {
+  // const renderDailylogs = (dailylog) => {
+  //   if (dailylog) {
+  //     dailylog.map((log) => {
+
+  //       return (
+  //         <tr>
+  //           <td width="5%">
+  //             <i className="fa fa-bell-o"></i>
+  //           </td>
+  //           <td>{log.date ? log.date : null}</td>
+  //           <td className="level-right">
+  //             <a className="button is-small is-primary" href="#">
+  //               View
+  //             </a>
+  //           </td>
+  //         </tr>
+  //       );
+  //     });
+  //   }
+  // };
+
   return (
     <div className="card-table">
       <div className="content">
         <table className="table is-fullwidth is-striped">
           <tbody>
-            <tr>
-              <td width="5%">
-                <i className="fa fa-bell-o"></i>
-              </td>
-              <td>{dailylog ? dailylog[0].date : null}</td>
-              <td className="level-right">
-                <a className="button is-small is-primary" href="#">
-                  View
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td width="5%">
-                <i className="fa fa-bell-o"></i>
-              </td>
-              <td>27.09.2020 SHIFT 2</td>
-              <td className="level-right">
-                <a className="button is-small is-primary" href="#">
-                  View
-                </a>
-              </td>
-            </tr>
+            {dailylog
+              ? dailylog.map((item) => (
+                  <tr>
+                    <td width="5%">
+                      <i className="fa fa-bell-o"></i>
+                    </td>
+                    <td>{item.date ? item.date : null}</td>
+                    <td className="level-right">
+                      <a className="button is-small is-primary" href="#">
+                        View
+                      </a>
+                    </td>
+                  </tr>
+                ))
+              : null}
           </tbody>
         </table>
       </div>
