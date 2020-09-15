@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import "./SingleReport.css";
 import api from "api";
 import image from "./image.png";
@@ -9,21 +9,30 @@ const singleLogAPI = api("dailylog");
 export const SingleReport = () => {
   const { state } = useLocation();
 
-  useLocation();
+  const history = useHistory();
+
+  const handleKeyPress = (event) => {
+    event.preventDefault();
+    history.push("/main");
+  };
 
   return (
-    <div className="book">
+    <div className="book" onMouseDown={handleKeyPress}>
       <div className="page">
         <div className="subpage">
           <ul>
             <li>
               Date:{state.dailylog.date}
-              <img src={image} alt="Runway 05"/>
+              <img src={image} alt="Runway 05" />
             </li>
 
             <li>Active Runway: {state.dailylog.activeRunway}</li>
+            <li>
+              {state.dailylog.activeRunway === "05"
+                ? "Magnetic track 051°"
+                : "Magnetic track 231°"}
+            </li>
             <li>Runway Conditions</li>
-            <li>Magnetic Track: {state.dailylog.rw.runway}°</li>
             <li>Phenomenon: {state.dailylog.rw.runwaystate}</li>
             <li>Coverage: {state.dailylog.rw.coverage}%</li>
             <li>Breaking Action: {state.dailylog.rw.breakingAction}</li>
@@ -38,8 +47,8 @@ export const SingleReport = () => {
             <li>ILS: {state.dailylog.equipment.ils ? "✔️" : "❌"}</li>
             <li>DME: {state.dailylog.equipment.dme ? "✔️" : "❌"}</li>
             <li>Maintenance: {state.dailylog.maintenance}</li>
-            <li>MIlitary{state.dailylog.militaryActivity}</li>
-            <li>Comments{state.dailylog.comments}</li>
+            <li>MIlitary: {state.dailylog.militaryActivity}</li>
+            <li>Comments: {state.dailylog.comments}</li>
           </ul>
         </div>
       </div>

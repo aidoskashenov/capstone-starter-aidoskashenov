@@ -34,7 +34,9 @@ export const AddReport = () => {
         const dailylogAPI = api("dailylog");
 
         const res = await dailylogAPI.create({
-          date: new Date().toISOString(),
+          date: new Date()
+            .toISOString()
+            .toLocaleString("en-US", { timeZone: "America/New_York" }),
           activeRunway: values.activeRunway,
           rw: {
             runway: values.runway,
@@ -91,9 +93,12 @@ export const AddReport = () => {
                   </label>
                 </div>
 
-                <label className="label mt-3 mb-3">Runway Conditions</label>
+                <label className="label mt-3 mb-3">
+                  Runway Conditions: Magnetic Track{" "}
+                  {activeRunway === "05" ? "051°" : "231°"}
+                </label>
                 <div className="field is-grouped">
-                  <label className="label mr-2"> Runway</label>
+                  <label className="label mr-2">Phenomenon</label>
                   <div className="control">
                     <Field
                       name="runway"
@@ -119,7 +124,7 @@ export const AddReport = () => {
                     <Field
                       name="coverage"
                       className="input is-small"
-                      type="text"
+                      type="number"
                     />
                   </div>
                   <label className="label mr-1"> Breaking action</label>
