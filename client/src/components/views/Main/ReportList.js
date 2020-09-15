@@ -10,9 +10,9 @@ export const ReportList = ({ dailylog }) => {
   };
 
   return (
-    <div className="card-table">
+    <div className="card-table ">
       <div className="content">
-        <table className="table is-fullwidth is-striped">
+        <table className="table is-fullwidth is-bordered">
           <tbody>
             {dailylog
               ? dailylog.map((item, i) => (

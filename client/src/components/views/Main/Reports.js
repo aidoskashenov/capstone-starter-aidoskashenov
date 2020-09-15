@@ -27,7 +27,6 @@ export const Reports = () => {
     })();
   }, []);
 
-
   return (
     <>
       <div className="container">
@@ -36,7 +35,7 @@ export const Reports = () => {
             <section className="hero is-fullwidth">
               <div className="hero-body">
                 <div className="container">
-                  <h1 className="title">Hello, Mr.qwerty,</h1>
+                  <h1 className="title">Good Day</h1>
                   <h2 className="subtitle">
                     I hope you are having a great day!
                   </h2>
@@ -87,9 +86,9 @@ export const Reports = () => {
                       </span>
                     </a>
                   </header>
-                  <div>
-                    <ReportList dailylog={dailylog} />
-                  </div>
+
+                  <ReportList dailylog={dailylog} />
+
                   <footer className="card-footer ">
                     <a href="#" className="card-footer-item">
                       View All

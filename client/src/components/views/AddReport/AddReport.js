@@ -1,11 +1,12 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { Formik, Form, ErrorMessage, Field } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import api from "api";
 
 export const AddReport = () => {
   const [activeRunway, setActiveRunway] = useState("05");
   const dailylogAPI = api("dailylog");
+  const history = useHistory();
 
   // Dispatch 'init' to update all of the initial todos...if any
   return (
@@ -54,8 +55,8 @@ export const AddReport = () => {
           comments: values.comments,
         });
 
-
         setSubmitting(false);
+        history.push("/main");
       }}
     >
       <Form>
@@ -68,7 +69,7 @@ export const AddReport = () => {
                 <div className="control">
                   <label className="radio">
                     <Field
-                    className="mr-2"
+                      className="mr-2"
                       type="radio"
                       label="05"
                       checked={activeRunway === "05"}
