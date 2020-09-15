@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import api from "api";
 
 export const AddReport = () => {
-  const [activeRunway, setActiveRunway] = useState("05");
+  const [activeRunway, setActiveRunway] = useState("");
   const dailylogAPI = api("dailylog");
   const history = useHistory();
 
@@ -34,10 +34,10 @@ export const AddReport = () => {
         const dailylogAPI = api("dailylog");
 
         const res = await dailylogAPI.create({
-          date: new Date()
-            .toISOString()
-            .toLocaleString("en-US", { timeZone: "America/New_York" }),
-          activeRunway: values.activeRunway,
+          date: new Date().toLocaleString("en-US", {
+            timeZone: "America/New_York",
+          }),
+          activeRunway: activeRunway,
           rw: {
             runway: values.runway,
             runwaystate: values.runwaystate,
